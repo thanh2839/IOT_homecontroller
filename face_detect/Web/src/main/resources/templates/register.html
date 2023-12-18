@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, height=auto, initial-scale=1.0" />
+  <title>Quản lý cửa IOT</title>
+  <link rel="shortcut icon" th:href="@{/assets/images/web-icon.png}" type="image/x-icon">
+  <link rel="stylesheet" th:href="@{/assets/css/builder.css}" />
+  <link rel="stylesheet" th:href="@{/assets/themify-icons/themify-icons.css}" />
+</head>
+
+<body>
+  <div id="header">
+    <div class="info">
+      <div class="social-media">
+        <i class="ti-facebook"></i>
+        <i class="ti-instagram"></i>
+        <i class="ti-youtube"></i>
+      </div>
+      <div class="contact">
+        <i class="ti-email"></i>
+        
+        <i class="ti-mobile"></i>
+        
+      </div>
+    </div>
+    <div class="nav-icon">
+      <a th:href="@{/}"><img th:src="@{/assets/images/header-nav.png}" /></a>
+    </div>
+    <ul id="nav">
+      
+      <li><a sec:authorize="!isAuthenticated()" th:href="@{/login}">Đăng nhập</a></li>
+      <li><a sec:authorize="!isAuthenticated()" th:href="@{/register}">Đăng kí</a></li>
+      <li sec:authorize="isAuthenticated()" id="overlay" >
+        <label class="switch">
+          <input id="toggleButton" type="checkbox" unchecked title="Trạng thái cửa"> 
+          <span class="slider round"></span>
+        </label>
+      </li>
+      <li><a sec:authorize="isAuthenticated()" th:href="@{/user/logs}">Lịch sử</a></li>
+      <li sec:authorize="isAuthenticated()">
+        <i class="ti-user"></i>
+        <ul class="sub-nav">
+          <h3 th:text="${currentUser.name}"></h3>
+          <li>
+            <!-- <a th:href="@{${currentUser.id == 1} ? '/users' : '/user/' + ${currentUser.id}}"> -->
+                <a th:href="@{'/user/' + ${currentUser.id}}">
+              <i class="fa-solid fa-user"></i> Hồ sơ
+            </a>
+          </li>
+          <li><a th:href="@{/logout}"><i class="fa-solid fa-arrow-right-from-bracket"></i> Đăng xuất</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="header-space"></div>
+  <div id="home"></div>
+  <p th:if="${param.success}" class="alert success"> Bạn đã đăng kí thành công</p>
+  <div id="sign">
+    <div class="form-box register">
+      <h2>Create an account</h2>
+      <form method="post" role="form" th:action="@{/register/save}" th:object="${user}">
+        <div class="input-box">
+          <i class="ti-user"></i>
+          <input id="name" name="name" type="text" th:field="*{name}" required>
+          <label for="">Fullname</label>
+          <p th:errors="*{name}" th:if="${#fields.hasErrors('name')}" class="alert danger"></p>
+        </div>
+        <div class="input-box">
+          <i class="ti-email"></i>
+          <input id="email" name="email" th:field="*{email}" type="text" required>
+          <label for="">Email</label>
+          <p th:errors="*{email}" th:if="${#fields.hasErrors('email')}" class="alert danger"></p>
+        </div>
+        <div class="input-box">
+          <i class="ti-lock"></i>
+          <input id="password" name="password" th:field="*{password}" type="password" required>
+          <label for="">Mật khẩu</label>
+          <p th:errors="*{password}" th:if="${#fields.hasErrors('password')}" class="alert danger"></p>
+        </div>
+        <div class="remember-forgot">
+          <label for="">
+            <input type="checkbox" name="" id="" required>Tôi chấp nhận các điều khoản
+          </label>
+
+        </div>
+        <button type="submit" class="button">Xác nhận</button>
+        <div class="login-register">
+          <p>Bạn đã có tài khoản?
+            <a th:href="@{/login}" class="login-link">Đăng nhập</a>
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  <button onclick="topFunction()" id="backtoheader" class="ti-arrow-circle-up">
+  </button>
+</body>
+<script src="/webjars/sockjs-client/sockjs.min.js"></script>
+<script src="/webjars/stomp-websocket/stomp.min.js"></script>
+<script src="https://kit.fontawesome.com/cfbcbc4299.js" crossorigin="anonymous"></script>
+<script th:src="@{/assets/script/script.js}"></script>
+
+</html>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "67171818680",
+    "firebase_url": "https://cogent-cocoa-378019-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "cogent-cocoa-378019",
+    "storage_bucket": "cogent-cocoa-378019.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:67171818680:android:6697b067c4d3a3c3cfe84d",
+        "android_client_info": {
+          "package_name": "com.example.iot_btl"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "67171818680-8o0cs51fu8ah8obovefonn13i57ns4b7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgBWKb9LdDpMpQdbGe4vKaZn3TZv3euRA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "67171818680-8o0cs51fu8ah8obovefonn13i57ns4b7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
