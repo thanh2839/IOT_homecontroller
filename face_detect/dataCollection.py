@@ -11,10 +11,11 @@ floatingPoint = 6
 save = True
 blurThreshold = 35
 outputFolderPath = "DataSet/DataCollect"
-classID = 0
+classID = 1 #khi chay that de class 0 fake 1
 
-videopath = 'fake2.mp4'
-cap = cv2.VideoCapture(1)
+videopath = 'fake.mp4' #thay video that va gia
+#cap = cv2.VideoCapture(1) #capture là cam máy tính , thay bang path
+cap = cv2.VideoCapture(videopath) #capture là cam máy tính , thay bang path
 cap.set(3, camWidth)
 cap.set(4, camHeight)
 # Initialize the FaceDetector object

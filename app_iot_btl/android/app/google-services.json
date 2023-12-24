@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "378923159186",
+    "firebase_url": "https://btl-iot-27a9c-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "btl-iot-27a9c",
+    "storage_bucket": "btl-iot-27a9c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:378923159186:android:229ac11de03e3bb447a04b",
+        "android_client_info": {
+          "package_name": "com.example.app_iot"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2CFfJ6JPILTawiXko91IUTSfZKvU2080"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:378923159186:android:f17d2323a90a11a147a04b",
+        "android_client_info": {
+          "package_name": "com.example.app_iot_btl"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2CFfJ6JPILTawiXko91IUTSfZKvU2080"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
